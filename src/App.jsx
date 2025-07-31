@@ -50,10 +50,10 @@ export default function App() {
     <div className="font-sans bg-white text-gray-800 relative">
       {/* Floating Social Icons */}
       <div className="fixed top-1/3 left-0 z-50 flex flex-col space-y-4 pl-2">
-        <a href="https://facebook.com/Bhutan Fartrek" target="_blank" rel="noopener noreferrer" className="text-white bg-blue-600 p-2 rounded-r hover:bg-blue-700">
+        <a href="https://facebook.com/bhutanfartrek" target="_blank" rel="noopener noreferrer" className="text-white bg-blue-600 p-2 rounded-r hover:bg-blue-700">
           <FaFacebook size={24} />
         </a>
-        <a href="https://instagram.com/Bhutan Fartrek" target="_blank" rel="noopener noreferrer" className="text-white bg-pink-500 p-2 rounded-r hover:bg-pink-600">
+        <a href="https://instagram.com/bhutanfartrek" target="_blank" rel="noopener noreferrer" className="text-white bg-pink-500 p-2 rounded-r hover:bg-pink-600">
           <FaInstagram size={24} />
         </a>
       </div>
