@@ -148,8 +148,9 @@ export default function App() {
             Send Message
           </button>
         </form>
+      </section>
 
-             {/* Footer */}
+      {/* Footer with Social Media Icons */}
       <footer className="text-center py-8 bg-gray-800 text-white">
         <div className="mb-2 flex justify-center gap-6 text-2xl">
           <a href="https://www.facebook.com/bhutanfartrek" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
