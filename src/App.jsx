@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import paro from './assets/images/paro.jpg';
 import punakha from './assets/images/punakha.jpg';
 import jomolhari from './assets/images/jomolhari.jpg';
@@ -47,6 +48,7 @@ export default function App() {
 
   return (
     <div className="font-sans bg-white text-gray-800 relative">
+      {/* Hero Section */}
       <section className="h-screen w-full overflow-hidden relative text-white text-center flex flex-col justify-center items-center px-4">
         <div
           className="absolute inset-0 bg-cover bg-center animate-slowPan transition-opacity duration-1000"
@@ -60,6 +62,7 @@ export default function App() {
         </div>
       </section>
 
+      {/* About Section */}
       <section className="py-16 px-4 max-w-4xl mx-auto" id="about">
         <h2 className="text-3xl font-bold mb-4">About Us</h2>
         <p>
@@ -70,6 +73,7 @@ export default function App() {
         </p>
       </section>
 
+      {/* Tours Section */}
       <section className="bg-gray-100 py-16 px-4" id="tours">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 text-center">Popular Tours & Treks</h2>
@@ -90,6 +94,7 @@ export default function App() {
         </div>
       </section>
 
+      {/* Modal for Tour Details */}
       {selectedTour && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white p-6 rounded shadow-lg max-w-lg relative">
@@ -103,6 +108,7 @@ export default function App() {
         </div>
       )}
 
+      {/* Gallery Section */}
       <section className="py-16 px-4 max-w-6xl mx-auto" id="gallery">
         <h2 className="text-3xl font-bold mb-8 text-center">Explore Bhutan</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -112,9 +118,11 @@ export default function App() {
         </div>
       </section>
 
+      {/* Contact Section */}
       <section className="py-16 px-4 max-w-3xl mx-auto" id="contact">
         <h2 className="text-3xl font-bold mb-4 text-center">Contact & Booking</h2>
         <p className="mb-6 text-center">Get in touch with us to plan your unforgettable journey to Bhutan!</p>
+
         <form
           action="https://formspree.io/f/mqallbbq"
           method="POST"
@@ -140,12 +148,38 @@ export default function App() {
             Send Message
           </button>
         </form>
+
+        {/* Social Icons Below Contact Form */}
+        <div className="mt-8 flex justify-center gap-6 text-2xl text-gray-600">
+          <a href="https://www.facebook.com/bhutanfartrek" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
+            <FaFacebook />
+          </a>
+          <a href="https://www.instagram.com/bhutanfartrek" target="_blank" rel="noopener noreferrer" className="hover:text-pink-600">
+            <FaInstagram />
+          </a>
+          <a href="https://wa.me/+61412716665" target="_blank" rel="noopener noreferrer" className="hover:text-green-500">
+            <FaWhatsapp />
+          </a>
+        </div>
       </section>
 
-      <footer className="text-center py-6 bg-gray-800 text-white">
-        &copy; {new Date().getFullYear()} Bhutan Fartrek. All rights reserved.
+      {/* Footer */}
+      <footer className="text-center py-8 bg-gray-800 text-white">
+        <div className="mb-2 flex justify-center gap-6 text-2xl">
+          <a href="https://www.facebook.com/bhutanfartrek" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
+            <FaFacebook />
+          </a>
+          <a href="https://www.instagram.com/bhutanfartrek" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400">
+            <FaInstagram />
+          </a>
+          <a href="https://wa.me/+61412716665" target="_blank" rel="noopener noreferrer" className="hover:text-green-400">
+            <FaWhatsapp />
+          </a>
+        </div>
+        <p>&copy; {new Date().getFullYear()} Bhutan Fartrek. All rights reserved.</p>
       </footer>
 
+      {/* Background Pan Animation */}
       <style>
         {`
           @keyframes slowPan {
