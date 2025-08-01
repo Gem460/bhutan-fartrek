@@ -66,10 +66,11 @@ export default function App() {
       <section className="py-16 px-4 max-w-4xl mx-auto" id="about">
         <h2 className="text-3xl font-bold mb-4">About Us</h2>
         <p>
-          Bhutan Fartrek is a locally owned travel agency based in Thimphu, offering
-          immersive trekking and cultural tours since 2016. We specialize in
-          personalized experiences, guided by licensed local experts who bring the
-          Kingdom of Bhutan to life.
+          Bhutan Fartrek is a locally owned travel agency based in Thimphu, offering immersive trekking and cultural tours across the majestic Himalayan kingdom since 2016. We specialize in personalized, small-group experiences guided by licensed local experts who are deeply connected to Bhutan's landscapes, history, and traditions.
+
+Whether you're seeking high-altitude adventures through pristine alpine trails, spiritual journeys through ancient monasteries, or intimate encounters with Bhutanese village life, we tailor each itinerary to reflect your interests and travel style. Our commitment to sustainability, cultural preservation, and responsible tourism ensures that every trip not only leaves you inspired — but also supports local communities and ecosystems.
+
+At Bhutan Fartrek, your journey is more than just a holiday — it’s a deep, meaningful connection with Bhutan’s soul. Join us to discover the Land of the Thunder Dragon in the most authentic and enriching way possible.
         </p>
       </section>
 
