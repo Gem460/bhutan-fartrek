@@ -116,7 +116,7 @@ export default function App() {
         <h2 className="text-3xl font-bold mb-4 text-center">Contact & Booking</h2>
         <p className="mb-6 text-center">Get in touch with us to plan your unforgettable journey to Bhutan!</p>
         <form
-          action="https://formspree.io/f/yourformid"
+          action="https://formspree.io/f/mqallbbq"
           method="POST"
           className="grid gap-6 bg-gray-50 p-6 rounded-lg shadow"
         >
