@@ -1,6 +1,40 @@
 {
   "hero_title": "Bhutan Fartrek",
   "hero_subtitle": "Trekking & Sightseeing in Bhutan since 2016",
+  "view_packages": "View Packages",
+
   "about_heading": "About Us",
-  "about_text": "Bhutan Fartrek is a locally owned travel agency based in Thimphu, offering immersive trekking and cultural tours across the majestic Himalayan kingdom since 2016. We specialize in personalized, small-group experiences guided by licensed local experts who are deeply connected to Bhutan's landscapes, history, and traditions."
+  "about_text": "Bhutan Fartrek is a locally owned travel agency based in Thimphu, offering immersive trekking and cultural tours across the majestic Himalayan kingdom since 2016. We specialize in personalized, small-group experiences guided by licensed local experts who are deeply connected to Bhutan's landscapes, history, and traditions.\n\nWhether you're seeking high-altitude adventures through pristine alpine trails, spiritual journeys through ancient monasteries, or intimate encounters with Bhutanese village life, we tailor each itinerary to reflect your interests and travel style. Our commitment to sustainability, cultural preservation, and responsible tourism ensures that every trip not only leaves you inspired — but also supports local communities and ecosystems.\n\nAt Bhutan Fartrek, your journey is more than just a holiday — it\u2019s a deep, meaningful connection with Bhutan\u2019s soul. Join us to discover the Land of the Thunder Dragon in the most authentic and enriching way possible.",
+
+  "tours_heading": "Popular Tours & Treks",
+  "druk_title": "Druk Path Trek",
+  "druk_days": "6 Days",
+  "druk_highlights": "Lakes, alpine forests, monasteries",
+  "druk_description": "A moderate trek between Paro and Thimphu featuring beautiful lakes and high mountain passes.",
+
+  "cultural_title": "Cultural West Tour",
+  "cultural_days": "5 Days",
+  "cultural_highlights": "Paro, Thimphu, Punakha",
+  "cultural_description": "Explore the rich cultural heritage of Western Bhutan with visits to dzongs, monasteries, and local markets.",
+
+  "jomolhari_title": "Jomolhari Trek",
+  "jomolhari_days": "9 Days",
+  "jomolhari_highlights": "Mount Jomolhari, yak herders, high passes",
+  "jomolhari_description": "A challenging and rewarding trek that takes you to the base of Bhutan’s second highest peak.",
+
+  "learn_more": "Learn More",
+  "gallery_heading": "Explore Bhutan",
+
+  "contact_heading": "Contact & Booking",
+  "contact_subtitle": "Get in touch with us to plan your unforgettable journey to Bhutan!",
+
+  "name": "Name",
+  "email": "Email",
+  "phone": "Phone Number",
+  "message": "Message",
+  "your_name": "Your Name",
+  "your_email": "Your Email",
+  "your_phone": "Your Phone Number",
+  "your_message": "Your Message",
+  "send_message": "Send Message"
 }
