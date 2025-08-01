@@ -1,5 +1,7 @@
+// src/App.jsx
 import React, { useState, useEffect } from "react";
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { useTranslation } from 'react-i18next';
 import paro from './assets/images/paro.jpg';
 import punakha from './assets/images/punakha.jpg';
 import jomolhari from './assets/images/jomolhari.jpg';
@@ -7,6 +9,7 @@ import bhutanView from './assets/images/bhutanview.jpg';
 import bhutanHero from './assets/images/bhutan.jpg';
 
 export default function App() {
+  const { t, i18n } = useTranslation();
   const [selectedTour, setSelectedTour] = useState(null);
   const [bgIndex, setBgIndex] = useState(0);
 
@@ -21,33 +24,44 @@ export default function App() {
 
   const tours = [
     {
-      title: "Druk Path Trek",
-      days: "6 Days",
-      highlights: "Lakes, alpine forests, monasteries",
+      title: t("druk_title"),
+      days: t("druk_days"),
+      highlights: t("druk_highlights"),
       price: "$980",
       image: paro,
-      description: "A moderate trek between Paro and Thimphu featuring beautiful lakes and high mountain passes."
+      description: t("druk_description")
     },
     {
-      title: "Cultural West Tour",
-      days: "5 Days",
-      highlights: "Paro, Thimphu, Punakha",
+      title: t("cultural_title"),
+      days: t("cultural_days"),
+      highlights: t("cultural_highlights"),
       price: "$850",
       image: punakha,
-      description: "Explore the rich cultural heritage of Western Bhutan with visits to dzongs, monasteries, and local markets."
+      description: t("cultural_description")
     },
     {
-      title: "Jomolhari Trek",
-      days: "9 Days",
-      highlights: "Mount Jomolhari, yak herders, high passes",
+      title: t("jomolhari_title"),
+      days: t("jomolhari_days"),
+      highlights: t("jomolhari_highlights"),
       price: "$1,420",
       image: jomolhari,
-      description: "A challenging and rewarding trek that takes you to the base of Bhutan’s second highest peak."
+      description: t("jomolhari_description")
     }
   ];
 
   return (
     <div className="font-sans bg-white text-gray-800 relative">
+      <div className="flex justify-end p-4">
+        <select
+          onChange={(e) => i18n.changeLanguage(e.target.value)}
+          value={i18n.language}
+          className="border px-2 py-1 rounded"
+        >
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+        </select>
+      </div>
+
       {/* Hero Section */}
       <section className="h-screen w-full overflow-hidden relative text-white text-center flex flex-col justify-center items-center px-4">
         <div
@@ -56,38 +70,32 @@ export default function App() {
         ></div>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10">
-          <h1 className="text-5xl md:text-6xl font-bold drop-shadow-lg">Bhutan Fartrek</h1>
-          <p className="text-xl md:text-2xl mt-4">Trekking & Sightseeing in Bhutan since 2016</p>
-          <a href="#tours" className="mt-6 inline-block px-6 py-3 bg-yellow-400 text-black font-semibold rounded shadow hover:bg-yellow-300 smooth-scroll">View Packages</a>
+          <h1 className="text-5xl md:text-6xl font-bold drop-shadow-lg">{t('hero_title')}</h1>
+          <p className="text-xl md:text-2xl mt-4">{t('hero_subtitle')}</p>
+          <a href="#tours" className="mt-6 inline-block px-6 py-3 bg-yellow-400 text-black font-semibold rounded shadow hover:bg-yellow-300 smooth-scroll">{t('view_packages')}</a>
         </div>
       </section>
 
       {/* About Section */}
       <section className="py-16 px-4 max-w-4xl mx-auto" id="about">
-        <h2 className="text-3xl font-bold mb-4">About Us</h2>
-        <p>
-          Bhutan Fartrek is a locally owned travel agency based in Thimphu, offering immersive trekking and cultural tours across the majestic Himalayan kingdom since 2016. We specialize in personalized, small-group experiences guided by licensed local experts who are deeply connected to Bhutan's landscapes, history, and traditions.
-
-Whether you're seeking high-altitude adventures through pristine alpine trails, spiritual journeys through ancient monasteries, or intimate encounters with Bhutanese village life, we tailor each itinerary to reflect your interests and travel style. Our commitment to sustainability, cultural preservation, and responsible tourism ensures that every trip not only leaves you inspired — but also supports local communities and ecosystems.
-
-At Bhutan Fartrek, your journey is more than just a holiday — it’s a deep, meaningful connection with Bhutan’s soul. Join us to discover the Land of the Thunder Dragon in the most authentic and enriching way possible.
-        </p>
+        <h2 className="text-3xl font-bold mb-4">{t('about_heading')}</h2>
+        <p className="text-gray-700 whitespace-pre-line">{t('about_text')}</p>
       </section>
 
       {/* Tours Section */}
       <section className="bg-gray-100 py-16 px-4" id="tours">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">Popular Tours & Treks</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">{t('tours_heading')}</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {tours.map((tour, idx) => (
               <div key={idx} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                 <img src={tour.image} alt={tour.title} className="h-48 w-full object-cover" />
                 <div className="p-6">
                   <h3 className="text-2xl font-bold mb-2 text-blue-900">{tour.title}</h3>
-                  <p className="text-sm text-gray-600 mb-1">Duration: {tour.days}</p>
-                  <p className="text-sm text-gray-600 mb-1">Highlights: {tour.highlights}</p>
+                  <p className="text-sm text-gray-600 mb-1">{tour.days}</p>
+                  <p className="text-sm text-gray-600 mb-1">{tour.highlights}</p>
                   <p className="text-lg font-semibold text-green-700 mt-2">Starting from {tour.price}</p>
-                  <button onClick={() => setSelectedTour(tour)} className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500">Learn More</button>
+                  <button onClick={() => setSelectedTour(tour)} className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500">{t('learn_more')}</button>
                 </div>
               </div>
             ))}
@@ -111,7 +119,7 @@ At Bhutan Fartrek, your journey is more than just a holiday — it’s a deep, m
 
       {/* Gallery Section */}
       <section className="py-16 px-4 max-w-6xl mx-auto" id="gallery">
-        <h2 className="text-3xl font-bold mb-8 text-center">Explore Bhutan</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center">{t('gallery_heading')}</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[jomolhari, paro, punakha, bhutanView].map((img, i) => (
             <img key={i} src={img} alt={`Bhutan view ${i + 1}`} className="rounded-lg object-cover h-48 w-full" />
@@ -121,8 +129,8 @@ At Bhutan Fartrek, your journey is more than just a holiday — it’s a deep, m
 
       {/* Contact Section */}
       <section className="py-16 px-4 max-w-3xl mx-auto" id="contact">
-        <h2 className="text-3xl font-bold mb-4 text-center">Contact & Booking</h2>
-        <p className="mb-6 text-center">Get in touch with us to plan your unforgettable journey to Bhutan!</p>
+        <h2 className="text-3xl font-bold mb-4 text-center">{t('contact_heading')}</h2>
+        <p className="mb-6 text-center">{t('contact_subtitle')}</p>
 
         <form
           action="https://formspree.io/f/mqallbbq"
@@ -130,23 +138,23 @@ At Bhutan Fartrek, your journey is more than just a holiday — it’s a deep, m
           className="grid gap-6 bg-gray-50 p-6 rounded-lg shadow"
         >
           <div>
-            <label className="block text-sm font-semibold mb-1" htmlFor="name">Name</label>
-            <input id="name" name="name" className="w-full border p-2 rounded" type="text" placeholder="Your Name" required />
+            <label className="block text-sm font-semibold mb-1" htmlFor="name">{t('name')}</label>
+            <input id="name" name="name" className="w-full border p-2 rounded" type="text" placeholder={t('your_name')} required />
           </div>
           <div>
-            <label className="block text-sm font-semibold mb-1" htmlFor="email">Email</label>
-            <input id="email" name="email" className="w-full border p-2 rounded" type="email" placeholder="Your Email" required />
+            <label className="block text-sm font-semibold mb-1" htmlFor="email">{t('email')}</label>
+            <input id="email" name="email" className="w-full border p-2 rounded" type="email" placeholder={t('your_email')} required />
           </div>
           <div>
-            <label className="block text-sm font-semibold mb-1" htmlFor="phone">Phone Number</label>
-            <input id="phone" name="phone" className="w-full border p-2 rounded" type="tel" placeholder="Your Phone Number" />
+            <label className="block text-sm font-semibold mb-1" htmlFor="phone">{t('phone')}</label>
+            <input id="phone" name="phone" className="w-full border p-2 rounded" type="tel" placeholder={t('your_phone')} />
           </div>
           <div>
-            <label className="block text-sm font-semibold mb-1" htmlFor="message">Message</label>
-            <textarea id="message" name="message" className="w-full border p-2 rounded" placeholder="Your Message" rows="4" required></textarea>
+            <label className="block text-sm font-semibold mb-1" htmlFor="message">{t('message')}</label>
+            <textarea id="message" name="message" className="w-full border p-2 rounded" placeholder={t('your_message')} rows="4" required></textarea>
           </div>
           <button type="submit" className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-500 font-semibold">
-            Send Message
+            {t('send_message')}
           </button>
         </form>
       </section>
